@@ -1,0 +1,97 @@
+.home-header {
+    margin-bottom: 80px;
+    @include small_medium{
+    margin-bottom: 147px;
+    }
+  .navbar {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background-color: $mainBgColor;
+    transition: all .5s ease-in-out;
+    .container {
+      @include small_medium {
+        flex-direction: column;
+      }
+      .navbar-brand {
+        img{
+          transition: width .5s ease-in-out;
+          width: 220px;
+        }
+        @include small_medium {
+          width: 100%;
+          display: block;
+          text-align: center;
+          margin: 0;
+          margin-bottom: 12px;
+        }
+      }
+      > div {
+        @include small_medium{
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+      .navbar-nav {
+        align-items: center;
+        @media (max-width: 767.98px) {
+          align-items: unset;
+          justify-content: space-around;
+          width: 100%;
+          flex-direction: row;
+        }
+
+        li {
+          color: $whiteColor;
+          &:not(:last-child) {
+            margin-inline-end: 80px;
+            @media (max-width: 767.98px) {
+              margin-inline-end: unset;
+              display: inline-block;
+            }
+          }
+          a {
+            text-decoration: none;
+            color: $whiteColor;
+            font-size: 18px;
+            font-weight: bold;
+            @include medium {
+              font-size: 16px
+            }
+            @include prefixer(transition, all 0.5s ease-in-out, webkit o moz);
+            &:hover {
+              color: $mainGreenColor;
+            }
+            @include small_medium{
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+        &.pdFixed{
+      transition: all .3s ease-in-out;
+          padding: 10px 0;
+          .navbar-brand {
+            img{
+              width: 170px;
+            }
+          }
+          
+    }
+
+    // .navbar-toggler {
+    //   &:focus {
+    //     border: none;
+    //     outline: none;
+    //   }
+    //   span {
+    //     &::before {
+    //       content: "\f0c9";
+    //       font-family: "FontAwesome";
+    //       color: $whiteColor;
+    //       font-size: 30px;
+    //     }
+    //   }
+    // }
+  }
+}

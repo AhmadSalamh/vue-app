@@ -1,0 +1,14 @@
+.paraFooter {
+  font-size: 19px;
+  font-weight: bold;
+    margin-bottom: 65px;
+  padding-inline-start: 30px;
+
+  @media (max-width: 991.98px) {
+    padding-inline-start: 10px;
+  }
+
+  @media (max-width: 1199.98px) {
+    margin-bottom: 40px;
+  }
+}

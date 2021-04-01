@@ -1,0 +1,9 @@
+@mixin postionEle($top, $left,$bottom, $postion, $bg,$width,$hight) {
+  position: $postion;
+  left: $left;
+  top: $top;
+  bottom:$bottom;
+  width: $width;
+  background-color: $bg;
+  height: $hight;
+}

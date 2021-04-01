@@ -1,0 +1,269 @@
+.delivery {
+  .dot-nav {
+    a {
+      &:first-of-type {
+        &:before {
+          content: url("../img/delivery/blue-dot-check.svg");
+        }
+      }
+
+      &:nth-child(2) {
+            color: #000;
+        &:before {
+          content: url("../img/delivery/dot-blue.png");
+             top: 40px;
+        
+          @include medium {
+              top: 36px;
+          }
+          
+          @include small_medium {
+            top: 33px;
+          }
+            @include xxSmall{
+              top: 45px;
+          }
+          @media (max-width: 432.98px) {
+            top: 45px;
+          }
+        }
+      }
+    }
+
+    span {
+      width: 37%;
+    }
+  }
+
+  .delivery-content {
+    background-color: #f5f5f5;
+    padding-top: 54px;
+    padding-bottom: 54px;
+    margin-bottom: 23px;
+    padding-inline-start: 30px;
+    padding-inline-end: 30px;
+    border-radius: 4px;
+
+    @include small_medium {
+      padding-inline-start: 9px;
+      padding-inline-end: 9px;
+    }
+
+    form {
+      p {
+        margin-bottom: 7px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #666666;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="email"] {
+        height: 50px;
+        outline: none;
+        border: 1px solid #bdbdbd;
+        border-radius: 5px;
+        width: 100%;
+        padding-inline-start: 10px;
+      }
+
+      .delivery-content-one {
+        margin-bottom: 70px;
+        @include small_medium{
+          margin-bottom: 35px;
+        }
+
+        .delivery-one-info {
+          margin-bottom: 30px;
+          @include small_medium {
+            margin-bottom: 0;
+          }
+          > div {
+            @include small_medium {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+
+      .delivery-content-tow {
+        margin-bottom: 30px;
+
+        .list-tabs {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          border-radius: 5px;
+          height: 70px;
+          margin-bottom: 40px;
+          background-color: #666;
+
+          @include small_medium {
+            height: auto;
+            flex-direction: column;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            align-items: flex-start;
+            padding-inline-start: 10px;
+          }
+          li {
+            input[type="radio"] {
+              display: none;
+            }
+
+            label {
+              cursor: pointer;
+              z-index: 99999;
+              position: relative;
+              font-size: 16px;
+              font-weight: bold;
+              color: $whiteColor;
+              display: flex;
+              align-items: center;
+              transition: all 0.3s ease;
+
+              @include xSmall {
+                font-size: 12px;
+              }
+
+              @include medium {
+                font-size: 13px;
+              }
+
+              &::before {
+                content: "";
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                margin-inline-end: 10px;
+                background-color: $whiteColor;
+              }
+
+              span {
+                position: absolute;
+                height: 9px;
+                width: 9px;
+                border-radius: 50%;
+                background-color: $mainGreenColor;
+                left: 3px;
+                display: none;
+                transition: all 0.3s ease;
+              }
+
+              &::after {
+                content: "";
+                position: absolute;
+                height: 9px;
+                width: 9px;
+                border-radius: 50%;
+                background-color: $mainGreenColor;
+                left: 3px;
+                display: none;
+              }
+            }
+
+            input[type="radio"]:checked + label span {
+              display: block;
+            }
+          }
+        }
+
+        .tab-content {
+          > div {
+            &:not(:first-child) {
+              display: none;
+            }
+          }
+          #tabs-1,
+          #tabs-2 {
+            .row {
+              @include small_medium {
+                margin-bottom: 0;
+              }
+              > div {
+                &:last-child {
+                  margin-top: 36px;
+                  @include small_medium{
+                    margin-top: 20px;
+                  }
+                }
+              }
+            }
+          }
+
+          #tabs-3 {
+            .row {
+              &:first-child {
+                margin-bottom: 40px;
+                @include small_medium {
+                  margin-bottom: 0;
+                }
+              }
+              >div{
+                @include small_medium{
+                  margin-bottom: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dropdown {
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+
+    button {
+      font-size: 18px;
+      height: 100%;
+      width: 100%;
+
+      &::after {
+        content: url(../img/home/arrow-green.svg);
+        border-left: unset !important;
+        border-right: unset !important;
+        border-top: unset;
+        position: absolute;
+        top: 7px;
+        left: 3px;
+      }
+    }
+
+    .dropdown-menu {
+      top: 0px !important;
+      border: 1px solid #bdbdbd;
+      border-radius: 5px;
+      left: -1px !important;
+      margin: 0;
+      padding: 0;
+      min-width: 101% !important;
+
+      a {
+        text-align: center;
+        line-height: 50px;
+        height: 50px;
+        @include prefixer(transition, all 0.3s ease-in-out, webkit o moz);
+        font-size: 18px;
+
+        &:hover {
+          background-color: $mainGreenColor;
+        }
+
+        &:first-child {
+          border-bottom: 1px solid #bdbdbd;
+        }
+      }
+    }
+
+    button {
+      &:focus {
+        box-shadow: unset;
+      }
+    }
+  }
+}

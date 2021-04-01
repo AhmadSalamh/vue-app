@@ -1,0 +1,115 @@
+
+/*Start Media Mixins*/
+@mixin xxLarge {
+    @media(min-width:1399px) and (max-width:1920px){
+        @content;
+    }
+}
+
+@mixin xLarge {
+    @media(min-width:1200px) and (max-width:1400px){
+        @content;
+    }
+}
+
+@mixin large {
+    @media(min-width:992px) and (max-width:1199px){
+        @content;
+    }
+}
+
+@mixin medium {
+    @media(min-width:768px) and (max-width:991px){
+        @content;
+    }
+}
+@mixin min_small {
+    @media (min-width:567){
+        @content;
+    }
+}
+@mixin min_medium {
+    @media (min-width:767.98px){
+        @content;
+    }
+}
+@mixin min_large {
+    @media (min-width:992){
+        @content;
+    }
+}
+@mixin min_xlarge {
+    @media (min-width:1200px){
+        @content;
+    }
+}
+@mixin small_medium {
+    @media (max-width:767.98px){
+        @content;
+    }
+}
+@mixin small {
+    @media (min-width:576px) and (max-width:767.98px){
+        @content;
+    }
+}
+
+@mixin xSmall {
+    @media(max-width:576px){
+        @content;
+    }
+}
+
+
+@mixin xxSmall {
+    @media(max-width:410px){
+        @content;
+    }
+}
+
+@mixin smallest {
+    @media(max-width:332px){
+        @content;
+    }
+}
+
+/*End Media Mixins*/
+
+
+
+/*overlay Mixin*/
+
+@mixin overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*Prefixes Mixin*/
+
+@mixin prefixer($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+}
+
+
+/*Animation Prefixes Mixin*/
+
+@mixin keyFrame($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}

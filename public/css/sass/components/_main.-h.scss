@@ -1,0 +1,12 @@
+.main-h{
+        color: $mainGreenColor;
+         margin-bottom: 27px;
+        font-size: 26px;
+        margin-top: 44px;
+        font-weight: bold;
+        @include small_medium{
+            margin-top: 20px;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+}

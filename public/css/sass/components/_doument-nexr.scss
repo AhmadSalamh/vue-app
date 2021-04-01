@@ -1,0 +1,41 @@
+ .document-next,
+ .document-prev {
+     display: inline-block;
+     width: 165px;
+     background-color: #4b1d4b;
+     height: 60px;
+     font-size: 18px;
+     text-align: center;
+     line-height: 60px;
+    margin-top: 17px;
+     border-radius: 5px;
+     color: $whiteColor;
+     cursor: pointer;
+     @include prefixer(transition, all 0.3s ease-in-out, webkit o moz);
+
+     @include small_medium {
+        width: 49%;
+        margin-top: 18px;
+       
+     }
+
+     &:hover {
+         background-color: $mainGreenColor;
+     }
+ }
+
+ .document-next {
+     background-color: #4b1d4b;
+ }
+
+ .document-prev {
+     background-color: $whiteColor;
+     color: #000;
+     border: 1px solid #4b1d4b;
+     margin-inline-start: 30px;
+
+     @include small_medium {
+         margin-inline-start: auto;
+         margin-top: 20px;
+     }
+ }
